@@ -41,7 +41,7 @@ class App extends Component {
     const obj = {
       id: Date.now(),
       name: name,
-      price: price + '₸',
+      price: price + ' ₸',
       count: count,
       instalment: instalment,
     }
