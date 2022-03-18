@@ -52,11 +52,15 @@ class Table extends Component {
           <tbody>
             <tr>
               <th>№</th>
-              <th>Название</th>
+                <th
+                   onClick={() => sortBy('name')}
+                >Название <i className="bi bi-arrow-down-up"></i></th>
               <th
                 onClick={() => sortBy('price')}
-              >Цена {!sortFlag ? <i className="bi bi-sort-up"></i> :  <i className="bi bi-sort-down"></i> }</th>
-              <th>Количество</th>
+              >Цена <i className="bi bi-arrow-down-up"></i></th>
+                <th
+                  onClick={() => sortBy('count')}
+                >Количество <i className="bi bi-arrow-down-up"></i></th>
             <th>В рассрочку</th>
             <th>Действие</th>
             </tr>

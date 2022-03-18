@@ -41,11 +41,11 @@ class AddForm extends Component {
     <>
       <div className="app-add-form">
         <h3>Добавить товар</h3>
-        <form className="add-form d-flex flex-wrap" onSubmit={this.onSubmit}>
+        <form className="add-form" onSubmit={this.onSubmit}>
           <div className='checkbox-input d-flex flex-wrap align-items-center'>
             <input
               type="text"
-              className="name"
+              className="name form-control"
               placeholder="Название"
               name="name"
               minLength="4"
@@ -54,7 +54,7 @@ class AddForm extends Component {
             />
             <input
               type="text"
-              className="price"
+              className="price form-control"
               placeholder="Цена"
               name="price"
               value={price}
@@ -62,7 +62,7 @@ class AddForm extends Component {
             />
             <input
               type="text"
-              className="count"
+              className="count form-control"
               placeholder="Количество"
               name="count"
               value={count}
@@ -71,13 +71,13 @@ class AddForm extends Component {
             <div className='checkbox-input d-flex align-items-center'>
               <input
                 type="checkbox"
-                className="instalment"
+                className="instalment form-check-input"
                 placeholder="Название"
                 name="instalment"
                 checked={instalment}
                 onChange={this.changeValue}
               />
-              <label htmlFor="instalment"> В рассрочку </label>
+              <label className="form-check-label" htmlFor="instalment"> В рассрочку </label>
             </div>
             </div>
             <button className="btn btn-outline-light submit-button">Добавить</button>

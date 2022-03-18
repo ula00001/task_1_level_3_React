@@ -11,20 +11,20 @@ class App extends Component {
     super(props);
     this.state = {
       data: [
-        { id: 1, name: 'Чехол OEM 11199 для iPhone 11 черный', price: '1 200 ₸', count: 120, instalment: true },
-        { id: 2, name: 'Чехол Samsung Smart S View Wallet Cover EF-EA562 Зеленый', price: '17 990 ₸', count: 33, instalment: false },
-        { id: 3, name: 'Samsung EF-JS906CTEGRU для Samsung Galaxy S22 Черный', price: '13 990 ₸', count: 0, instalment: false },
+        { id: 1, name: 'Чехол OEM 11199 для iPhone 11 черный', price: '1200 ₸', count: 120, instalment: true },
+        { id: 2, name: 'Чехол Samsung Smart S View Wallet Cover EF-EA562 Зеленый', price: '17990 ₸', count: 33, instalment: false },
+        { id: 3, name: 'Samsung EF-JS906CTEGRU для Samsung Galaxy S22 Черный', price: '13990 ₸', count: 0, instalment: false },
         { id: 4, name: 'Veles для iPhone 13 Pro Max прозрачный', price: '790 ₸', count: 3, instalment: true },
         { id: 5, name: 'OEM для Apple iPhone 11 прозрачный', price: '790 ₸', count: 20, instalment: true },
-        { id: 6, name: 'OEM 11199 для iPhone 11 черный', price: '1 200 ₸', count: 55, instalment: false },
-        { id: 7, name: 'Чехол Apple MM2Y3ZM MagSafe для Apple iPhone 12 Pro', price: '36 060 ₸', count: 100, instalment: false },
+        { id: 6, name: 'OEM 11199 для iPhone 11 черный', price: '1200 ₸', count: 55, instalment: false },
+        { id: 7, name: 'Чехол Apple MM2Y3ZM MagSafe для Apple iPhone 12 Pro', price: '36760 ₸', count: 100, instalment: false },
       ],
       term: "",
       filterText: "",
       instalment: false,
       stock: false,
     }
-    this.sortFlag = false;
+    // this.sortFlag = false;
   }
 
   deleteItem = (id) => {
@@ -41,7 +41,7 @@ class App extends Component {
     const obj = {
       id: Date.now(),
       name: name,
-      price: price,
+      price: price + '₸',
       count: count,
       instalment: instalment,
     }
@@ -73,12 +73,23 @@ class App extends Component {
 
   compareBy(key) {
     return function (a, b) {
-      return parseInt((a[key]).split(" ").join("")) - parseInt((b[key]).split(" ").join(""));
+      if (key == 'price') {
+        return parseInt((a[key]).split(" ").join("")) - parseInt((b[key]).split(" ").join(""));
+      } else if (key == 'count') {
+        return a[key] - b[key];
+      } else if (key == 'name') {
+         if (a[key] > b[key]) {
+          return -1;
+        }
+        if (b[key] > a[key]) {
+          return 1;
+        }
+      }
     };
   }
 
   sortBy = (key) => {
-    this.sortFlag = !this.sortFlag;
+    // this.sortFlag = !this.sortFlag;
     let arrayCopy = [...this.state.data];
     if (flag) {
       flag = false;
@@ -143,7 +154,7 @@ class App extends Component {
         <Table
           data={vsisbleData}
           sortBy={this.sortBy}
-          sortFlag={this.sortFlag}
+          // sortFlag={this.sortFlag}
           instalment={instalment}
           stock={stock}
           deleteItem={this.deleteItem}

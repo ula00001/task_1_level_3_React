@@ -56,26 +56,29 @@ class UpdateForm extends Component  {
             </div>
             <div className="modal-body">
               <form className="d-flex flex-column">
+                <label htmlFor="name" className="form-label">Название</label>
                  <input
                     type="text"
-                    className="name"
+                    className="name form-control mb-2"
                     placeholder="Название"
                     name="name"
                     minLength="4"
                     value={name}
                     onChange={this.changeValue}
                   />
+                  <label htmlFor="price" className="form-label">ЦенаL</label>
                   <input
                     type="text"
-                    className="price"
+                    className="price form-control mb-2"
                     placeholder="Цена"
                     name="price"
                     value={price}
                     onChange={this.changeValue}
                   />
+                  <label htmlFor="count" className="form-label">Количество</label>
                   <input
                     type="text"
-                    className="count"
+                    className="count form-control mb-2"
                     placeholder="Количество"
                     name="count"
                     value={count}
@@ -84,13 +87,15 @@ class UpdateForm extends Component  {
                   <div className="checkbox-input">
                     <input
                       type="checkbox"
-                      className="instalment"
+                      className="instalment form-check-input"
                       placeholder="Название"
                       name="instalment"
                       checked={instalment}
                       onChange={this.changeValue}
                     />
-                    <label htmlFor="instalment"> В рассрочку </label>
+                    <label className="form-check-label" htmlFor="form-check-input">
+                      В рассрочку
+                    </label>
                   </div>
               </form>
             </div>
