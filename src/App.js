@@ -1,6 +1,6 @@
 import './App.scss';
 import { Component } from "react";
-import Table from "./components/Table";
+import Table from "./components/table/Table";
 import AddForm from "./components/addForm/AddForm";
 import SearchForm from "./components/searchForm/SearchForm";
 import InputForm from "./components/inputForm/InputForm";

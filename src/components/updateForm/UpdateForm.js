@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import "./updateForm.scss";
 
 class UpdateForm extends Component  {
   constructor(props) {
@@ -87,13 +88,13 @@ class UpdateForm extends Component  {
                   <div className="checkbox-input">
                     <input
                       type="checkbox"
-                      className="instalment form-check-input"
+                      className="instalment form-check-input "
                       placeholder="Название"
                       name="instalment"
                       checked={instalment}
                       onChange={this.changeValue}
                     />
-                    <label className="form-check-label" htmlFor="form-check-input">
+                    <label style={{'margin-left': '10px'}} className="form-check-label instalment" htmlFor="form-check-input">
                       В рассрочку
                     </label>
                   </div>

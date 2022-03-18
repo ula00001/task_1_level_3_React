@@ -1,6 +1,7 @@
 import { Component } from 'react';
-import UpdateForm from "../components/UpdateForm";
-import img from "../images/no_product.png"
+import UpdateForm from "../updateForm/UpdateForm";
+import img from "../../images/no_product.png";
+import "./table.scss";
 
 class Table extends Component {
   constructor(props) {
